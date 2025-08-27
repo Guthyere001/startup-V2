@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrein - Portal de Fitness e Saúde</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m6.5 6.5 11 11"/>
+                    <path d="m21 21-1-1"/>
+                    <path d="m3 21 1-1"/>
+                    <path d="m18 22 4-4"/>
+                    <path d="m2 22 4-4"/>
+                    <path d="m3 2 1 1"/>
+                    <path d="m21 2-1 1"/>
+                    <path d="m6 2 4 4"/>
+                    <path d="m18 2-4 4"/>
+                </svg>
+                <span class="brand-text">NUTREIN</span>
+            </div>
+
+            <div class="nav-menu">
+                <button class="nav-btn active" data-section="home">
+                    <svg class="nav-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                    Início
+                </button>
+                <button class="nav-btn" data-section="chat">
+                    <svg class="nav-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    Chat IA
+                </button>
+                <button class="nav-btn" data-section="professionals">
+                    <svg class="nav-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="m22 21-3-3m0 0a2 2 0 0 0 0-4 2 2 0 0 0 0 4z"/>
+                    </svg>
+                    Profissionais
+                </button>
+                <button class="nav-btn" data-section="exercises">
+                    <svg class="nav-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m6.5 6.5 11 11"/>
+                        <path d="m21 21-1-1"/>
+                        <path d="m3 21 1-1"/>
+                        <path d="m18 22 4-4"/>
+                        <path d="m2 22 4-4"/>
+                        <path d="m3 2 1 1"/>
+                        <path d="m21 2-1 1"/>
+                        <path d="m6 2 4 4"/>
+                        <path d="m18 2-4 4"/>
+                    </svg>
+                    Exercícios
+                </button>
+            </div>
+
+            <div class="nav-auth">
+                <div id="auth-logged-out">
+                    <button class="auth-btn" id="login-btn">
+                        <svg class="auth-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        Entrar
+                    </button>
+                </div>
+                <div id="auth-logged-in" class="hidden">
+                    <span id="user-name" class="user-greeting"></span>
+                    <button class="logout-btn" id="logout-btn">Sair</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home-section" class="section active">
+            <div class="hero">
+                <h1 class="hero-title">
+                    Bem-vindo ao <span class="text-primary">Nutrein</span>
+                </h1>
+                <p class="hero-description">
+                    Seu portal completo para fitness, saúde e bem-estar. Conecte-se com profissionais, descubra exercícios e converse com nossa IA especializada.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" data-section="chat">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        Chat com IA
+                    </button>
+                    <button class="btn btn-outline" data-section="professionals">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                        </svg>
+                        Profissionais
+                    </button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Chat Inteligente</h3>
+                    <p class="feature-description">
+                        Converse com nossa IA especializada em fitness e nutrição para tirar dúvidas e receber orientações personalizadas.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Profissionais</h3>
+                    <p class="feature-description">
+                        Encontre nutricionistas e treinadores especializados em diversos esportes para te ajudar a alcançar seus objetivos.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6.5 6.5 11 11"/>
+                            <path d="m21 21-1-1"/>
+                            <path d="m3 21 1-1"/>
+                            <path d="m18 22 4-4"/>
+                            <path d="m2 22 4-4"/>
+                            <path d="m3 2 1 1"/>
+                            <path d="m21 2-1 1"/>
+                            <path d="m6 2 4 4"/>
+                            <path d="m18 2-4 4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Exercícios</h3>
+                    <p class="feature-description">
+                        Biblioteca completa de exercícios organizados por grupo muscular com instruções detalhadas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="chat-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    Chat com IA - Assistente de Fitness
+                </h2>
+                <p class="section-description">Faça perguntas sobre exercícios, nutrição e saúde</p>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-avatar bot-avatar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7z"/>
+                            </svg>
+                        </div>
+                        <div class="message-content">
+                            <p>Olá! Sou seu assistente de fitness. Como posso te ajudar hoje?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Digite sua pergunta sobre fitness...">
+                    <button id="send-btn" class="send-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m22 2-7 20-4-9-9-4z"/>
+                            <path d="M22 2 11 13"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professionals Section -->
+        <section id="professionals-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Profissionais</h2>
+                <p class="section-description">Especialistas qualificados para te ajudar a alcançar seus objetivos</p>
+            </div>
+
+            <div class="professionals-grid">
+                <div class="professional-card">
+                    <div class="professional-info">
+                        <img src="professional-nutritionist-woman.png" alt="Dr. Ana Silva" class="professional-avatar">
+                        <div class="professional-details">
+                            <h3 class="professional-name">Dr. Ana Silva</h3>
+                            <p class="professional-specialty">Nutricionista Esportiva</p>
+                        </div>
+                    </div>
+                    <div class="professional-meta">
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>4.9</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>São Paulo, SP</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                            <span>8 anos</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-full">Agendar Consulta</button>
+                </div>
+
+                <div class="professional-card">
+                    <div class="professional-info">
+                        <img src="personal-trainer-man.png" alt="Carlos Santos" class="professional-avatar">
+                        <div class="professional-details">
+                            <h3 class="professional-name">Carlos Santos</h3>
+                            <p class="professional-specialty">Personal Trainer</p>
+                        </div>
+                    </div>
+                    <div class="professional-meta">
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>4.8</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Rio de Janeiro, RJ</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                            <span>6 anos</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-full">Agendar Consulta</button>
+                </div>
+
+                <div class="professional-card">
+                    <div class="professional-info">
+                        <img src="physiotherapist-woman.png" alt="Mariana Costa" class="professional-avatar">
+                        <div class="professional-details">
+                            <h3 class="professional-name">Mariana Costa</h3>
+                            <p class="professional-specialty">Fisioterapeuta</p>
+                        </div>
+                    </div>
+                    <div class="professional-meta">
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>4.9</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Belo Horizonte, MG</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                            <span>10 anos</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-full">Agendar Consulta</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercises Section -->
+        <section id="exercises-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Biblioteca de Exercícios</h2>
+                <p class="section-description">Exercícios organizados por grupo muscular</p>
+            </div>
+
+            <div class="exercises-grid">
+                <div class="exercise-card">
+                    <div class="exercise-image">
+                        <img src="bench-press-exercise.png" alt="Supino Reto">
+                    </div>
+                    <div class="exercise-content">
+                        <h3 class="exercise-name">Supino Reto</h3>
+                        <div class="exercise-badges">
+                            <span class="badge badge-secondary">Peito</span>
+                            <span class="badge badge-warning">Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-image">
+                        <img src="squat-exercise.png" alt="Agachamento">
+                    </div>
+                    <div class="exercise-content">
+                        <h3 class="exercise-name">Agachamento</h3>
+                        <div class="exercise-badges">
+                            <span class="badge badge-secondary">Pernas</span>
+                            <span class="badge badge-success">Iniciante</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-image">
+                        <img src="pull-up-exercise.png" alt="Barra Fixa">
+                    </div>
+                    <div class="exercise-content">
+                        <h3 class="exercise-name">Barra Fixa</h3>
+                        <div class="exercise-badges">
+                            <span class="badge badge-secondary">Costas</span>
+                            <span class="badge badge-danger">Avançado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-image">
+                        <img src="shoulder-press-exercise.png" alt="Desenvolvimento">
+                    </div>
+                    <div class="exercise-content">
+                        <h3 class="exercise-name">Desenvolvimento</h3>
+                        <div class="exercise-badges">
+                            <span class="badge badge-secondary">Ombros</span>
+                            <span class="badge badge-warning">Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m6.5 6.5 11 11"/>
+                    <path d="m21 21-1-1"/>
+                    <path d="m3 21 1-1"/>
+                    <path d="m18 22 4-4"/>
+                    <path d="m2 22 4-4"/>
+                    <path d="m3 2 1 1"/>
+                    <path d="m21 2-1 1"/>
+                    <path d="m6 2 4 4"/>
+                    <path d="m18 2-4 4"/>
+                </svg>
+                <span class="footer-brand-text">Nutrein</span>
+            </div>
+            <p class="footer-description">Transformando vidas através do fitness e bem-estar</p>
+            <p class="footer-copyright">© 2025 Nutrein. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Acesse sua conta</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Entrar</button>
+                    <button class="auth-tab" data-tab="signup">Cadastrar</button>
+                </div>
+
+                <div id="login-form" class="auth-form active">
+                    <form id="login-form-element">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <input type="email" id="login-email" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Senha</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <circle cx="12" cy="16" r="1"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="login-password" placeholder="••••••••" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+                    </form>
+                </div>
+
+                <div id="signup-form" class="auth-form">
+                    <form id="signup-form-element">
+                        <div class="form-group">
+                            <label for="signup-name">Nome</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <input type="text" id="signup-name" placeholder="Seu nome" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <input type="email" id="signup-email" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Senha</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <circle cx="12" cy="16" r="1"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="signup-password" placeholder="••••••••" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Criar Conta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
